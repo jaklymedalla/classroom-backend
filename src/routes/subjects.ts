@@ -29,8 +29,10 @@ router.get("/", async (req, res) => {
 
         //if department query exists, filter by department name
         if (department) {
+            filterConditions.push(ilike(departments.name, `${department}%`));
             const deptPattern = `%${String(department).replace(/[%_]/g, '\\$&')}%`;
             filterConditions.push(ilike(departments.name, deptPattern));
+            
         }
 
         //combine all filter conditions using AND operator
