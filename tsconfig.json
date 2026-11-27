@@ -33,6 +33,5 @@
   "include": [
     "src/**/*", 
     //"drizzle.config.ts" 
-  ],
-  "exclude": ["src/crud.ts"]
+  ]
 }
